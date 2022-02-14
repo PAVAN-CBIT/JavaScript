@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Arrow</title>
+        <script>
+            var products = [
+                {Name: 'TV', Category: 'Electronics'},
+                {Name: 'Nike Casuals', Category: 'Footwear'},
+                {Name: 'Mobile', Category: 'Electronics'},
+                {Name: 'Watch', Category: 'Electronics'}
+            ];
+            function f1(){
+                var electronicsCount = products.filter(product=>product.Category=="Electronics").length;
+                /*
+                    products.filter(function(product){
+                        return product.Category=='Electronics';
+                    }).length;
+                */
+                document.write(`Total Number of Electronics : ${electronicsCount}`);
+            }
+            f1();
+        </script>
+    </head>
+    <body >
+        
+    </body>
+</html>
+
