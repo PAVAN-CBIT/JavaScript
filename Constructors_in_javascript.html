@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+
+    <script>
+        class Database{
+
+
+
+                          constructor(dbname){
+                                                
+                                                 alert(`Connected Successfully to ${dbname} database...`);
+
+
+                                            }
+                    
+
+                         Insert(){
+
+                                     document.write("Record Inserted");
+
+
+
+                               
+                                 }
+
+
+
+                                 Update(){
+                                                document.write(`Record Updated...`);
+                                        
+                                         }    
+
+
+                                       
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    }
+
+
+
+                    function InsertClick() {
+
+
+                                                   let Oracle=new Database('oracle');
+                                                   Oracle.Insert();
+
+                                           }  
+
+
+
+                function UpdateClick(){
+
+                                     
+                                     let oracle=new Database('My SQL');
+                                     oracle.Update();
+
+
+                }   
+    </script>
+
+</head>
+<body>
+    
+
+    <button onclick="InsertClick()">Insert into Oracle</button>
+    <button onclick="UpdateClick()">Update @ SQL</button>
+</body>
+</html>
