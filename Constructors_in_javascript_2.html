@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Constructor</title>
+
+    <script>
+        class Database{
+
+
+
+                          constructor(dbname,connectionString){
+                                                
+                                                document.write(`<h2> Connected to ${dbname}</h2>`);
+
+                                                for(var property in connectionString)
+                                                {
+                                                         document.write(`${property}:${connectionString[property]}<br>`);
+                                                }
+                                                
+                                                document.write("<hr>");
+
+                                            }
+                    
+
+                         Insert(){
+
+                                     document.write("Record Inserted");
+
+
+
+                               
+                                 }
+
+
+
+                                 Update(){
+                                                document.write(`Record Updated...`);
+                                        
+                                         }    
+
+
+                                       
+
+                    
+                    
+                    
+                    
+                    
+                    
+                    }
+
+
+
+                    function InsertClick() {
+
+
+                                                   let Oracle=new Database('oracle',{UserName:'Pavan',Password:'Kevin'});
+                                                   Oracle.Insert();
+
+                                           }  
+
+
+
+                function UpdateClick(){
+
+                                     
+                                     let Sql=new Database('My SQL',{Host:'LocalHost',User:'Root',Password:'Joe'});
+                                     Sql.Update();
+
+
+                }   
+    </script>
+
+</head>
+<body>
+    
+
+    <button onclick="InsertClick()">Insert into Oracle</button>
+    <button onclick="UpdateClick()">Update @ SQL</button>
+</body>
+</html>
