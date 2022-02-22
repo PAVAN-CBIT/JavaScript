@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+
+        document.onselectstart=function(){
+            alert('Selection Disabled');
+            return false;
+
+        }
+        document.oncut=function(){
+            alert('cut Disabled');
+            return false;
+        }
+
+        document.oncontextmenu=function(){
+            alert('Right Click Disabled');
+            return false;
+        }
+        function OpenImage(){
+            window.open('../Jacket.jpg', 'width=400 height=300');
+        }
+    </script>
+</head>
+<body class="container-fluid">
+    <h2>Right Click on allowed on this page.</h2>
+    <img src="../Jacket.jpg" width="100" height="100" ondblclick="OpenImage()">
+    <p>double to view large</p>
+    
+</body>
+</html>
