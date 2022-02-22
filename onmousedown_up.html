@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+
+    <script>
+        function ShowOffer(e){
+            document.querySelector("img").src="../leecooper.jpg";
+        }
+
+        function HideOffer(e){
+            document.querySelector("img").src='../amazon pic.png';
+        }
+    </script>
+</head>
+<body class="container-fluid">
+
+    <img src="../amazon pic.PNG" width="200" height="200" onmousedown="ShowOffer(event)" onmouseup="HideOffer(event)">
+    <p>Press hold down mouse button to view offer</p>
+    
+</body>
+</html>
