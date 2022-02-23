@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+
+
+            function SubmitClick(){
+
+
+
+                        alert('Form Submitted...');
+
+            }
+            function ResetClick(){
+                     alert('Form will reset');
+            }
+      
+       
+    </script>
+</head>
+<body class="container-fluid">
+
+ <h2>Register User</h2>
+ <form onsubmit="SubmitClick" onreset="ResetClick()">
+   <dl>
+    <dt>UserName</dt>
+    <dd><input type="text" name="UserName"></dd>
+    <dt>Password</dt>
+    <dd><input type="password" name="Password"></dd>
+    <dt>Select City</dt>
+    <dd>
+        <select name="" id="">
+            <option value="">Delhi</option>
+            <option value="">Hyderabad</option>
+        </select>
+    </dd>
+   </dl>
+
+   <button type="submit" class="btn btn-success">Submit</button>
+   <button type="reset" class="btn btn-warning">Cancel</button>
+
+ </form>
+    
+</body>
+</html>
