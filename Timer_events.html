@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+
+        function msg1(){
+            document.getElementById("h1").innerHTML="Hello";
+
+        }
+        function msg2(){
+            document.getElementById("h1").innerHTML="How r u?";
+
+        }
+        function msg3(){
+            document.getElementById("h1").innerHTML="Welcome to JavaScript";
+
+        }
+
+        var m1,m2,m3;
+
+        function bodyload(){
+            m1=setTimeout(msg1,2000);
+            m2=setTimeout(msg2,5000);
+            m3=setTimeout(msg3,7000);
+
+        }
+        function Cancel(){
+            clearTimeout(m2);
+        }
+        
+
+
+           
+       
+    </script>
+</head>
+<body class="container-fluid" onload="bodyload()">
+
+    <div class="mt-2">
+
+        <button onclick="Cancel()" class="btn btn-danger">Cancel 2nd Msg</button>
+
+    </div>
+
+    <h1 id="h1" class="bg-primary text-white text-center mt-4 p-3"></h1>
+ 
+
+   
+    
+</body>
+</html>
