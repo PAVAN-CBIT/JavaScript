@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <script>
+
+       function GetPosition(e){
+           var x=Math.round(e.touches[0].clientX);
+           var y=Math.round(e.touches[0].clientY);
+
+           var pic=document.querySelector("img");
+           pic.style.position='fixed';
+           pic.style.top=y+"px";
+           pic.style.left=x+"px";
+       }
+       
+    </script>
+</head>
+<body class="container-fluid">
+
+    <img src="../Jacket.jpg" ontouchmove="GetPosition(event)" width="150" height="150">
+    
+</body>
+</html>
