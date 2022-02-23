@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Operators</title>
+        <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+        <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+        <script>
+            function LoadProduct(id){
+                fetch(`http://fakestoreapi.com/products/${id}`)
+                .then(function(response){
+                    return response.json();
+                })
+                .then(function(data){
+                    document.getElementById("pic").src= data.image;
+                    document.getElementById("title").innerHTML = data.title;
+                    document.getElementById("description").innerHTML = data.description;
+                    document.getElementById("tag").innerHTML = `
+                     <h4> $ ${data.price}</h4>
+                    `
+                })
+            }
+            function bodyload(){
+                LoadProduct(1);
+            }
+            var count = 1;
+            function NextClick(){
+                count++;
+                LoadProduct(count);
+            }
+            function PreviousClick(){
+               
+                    count--;
+                     LoadProduct(count);
+            }
+            function SlideShow(){
+                count++;
+                LoadProduct(count);
+            }
+            var slide;
+            function PlayClick(){
+                document.getElementById("status").innerHTML = 'Slide Show - Started';
+                slide = setInterval(SlideShow,5000);
+            }
+            function PauseClick(){
+                document.getElementById("status").innerHTML = 'Slide Show - Paused';
+                clearInterval(slide);
+            }
+        </script>
+        <style>
+            #tag {
+                width: 140px;
+                height:50px;
+                border:2px solid black;
+                border-radius: 20px;
+                position:fixed;
+                top:100px;
+                right: 100px;
+                background-color: green;
+                color:white;
+                padding: 10px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body class="container-fluid" onload="bodyload()">
+        <div id="tag">
+
+        </div>
+        <div class="d-flex justify-content-center">
+            <div class="card mt-3 w-50">
+                <div class="card-header">
+                    <h4 id="status"></h4>
+                </div>
+                <img id="pic" height="300" class="card-img-top">
+                <div class="card-header text-center">
+                    <h4 id="title"></h4>
+                </div>
+                <div class="card-body" style="height: 140px; overflow: auto;">
+                    <p id="description"></p>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-outline-danger" onclick="PreviousClick()">
+                        <span class="bi bi-chevron-left"></span>
+                    </button>
+                    <button class="btn btn-outline-danger" onclick="NextClick()">
+                        <span class="bi bi-chevron-right"></span>
+                    </button>
+                </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-outline-danger" onclick="PlayClick()">
+                        <span class="bi bi-play"></span>
+                    </button>
+                    <button class="btn btn-outline-danger" onclick="PauseClick()">
+                        <span class="bi bi-pause"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
