@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ajax</title>
+        <script src="../node_modules/jquery/dist/jquery.js"></script>
+        <script>
+            $(function(){
+                $("button").click(function(){
+                    $.ajax({
+                        method: 'GET',
+                        url: '../data/products.json',
+                        success: function(data){
+                            $.each(data, function(key, value){
+                                $(`<tr><td>${value.Name}</td><td>${value.Price}</td></tr>`).appendTo("tbody");
+                            })
+                        }
+                    })
+                })
+            })
+            .ajaxStart(function(){
+                alert(`Ajax Request Started`);
+            })
+            .ajaxSuccess(function(){
+                alert(`Your Request for fetching data submitted successfully..`);
+            })
+            .ajaxComplete(function(){
+                alert(`Request processed successfully.. `);
+            })
+            .ajaxStop(function(){
+                alert(`Response finished and process stopped.`);
+            })
+            .ajaxError(function(obj, xhr){
+                alert(`Something went wrong : ${xhr.status} - ${xhr.statusText}`);
+            })
+        </script>
+    </head>
+    <body>
+        <button>
+            Get Details
+        </button>
+        <table width="300" border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </body>
+</html>
